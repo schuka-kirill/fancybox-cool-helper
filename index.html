@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="vendor/jquery/jquery-1.10.1.min.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="vendor/fancybox/jquery.fancybox.mod.js?v=2.1.6"></script>
+	<link rel="stylesheet" type="text/css" href="vendor/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+				wrapCSS: 'imagesGallery',
+				closeBtn  : true,
+				arrows    : true,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width: 55
+						,height: 55
+						,wrapCSS: 'itemContainer'
+						,content: $('#remark-pnb-container').clone(true, true)
+					}
+				}
+			});
+
+            $('.fancybox-thumbs2').fancybox({
+                prevEffect : 'none',
+                nextEffect : 'none',
+                wrapCSS: 'imagesGallery',
+                closeBtn  : true,
+                arrows    : true,
+                nextClick : true,
+
+                helpers : {
+                    thumbs : {
+                        width: 55
+                        ,height: 55
+                        ,wrapCSS: 'itemContainer'
+                        ,content: $('#remark-pnb-container').clone(true, true)
+                    }
+                }
+            });
+
+			$(document).on('click', '#remark-pnb-container .buy', function(event) {
+				event.preventDefault();
+				alert("BUY");
+			});
+
+		});
+		/*var priceAndBuyTemplate = '';
+		function renderThumbs(){
+
+		}
+		function fancyboxThumbsCustomContent()
+		{
+			console.log('fancyboxThumbsCustomContent()');
+			return $('<div class="remark-pnb-container"></div>')
+				.append(
+					 $('<div class="head-3"></div>').html("YAYAYA")
+					,$('<div class="code"></div>').html("CODE")
+					,$('<div id="pnb-container"></div>')
+				);
+		}*/
+	</script>
+<style type="text/css">
+	.fancybox-custom .fancybox-skin {
+		box-shadow: 0 0 50px #222;
+	}
+
+	body {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+/*ADDITIONAL STYLES*/
+.fancybox-skin { background: #fff; }
+.imagesGallery #fancybox-thumbs {
+	width: 16.538em;
+	float: right;
+}
+
+.imagesGallery .fancybox-outer {
+	margin-right: 17.308em;
+}
+
+.fancybox-thumbs-list {
+	list-style: none;
+	margin: 0 -3px;
+	padding: 0;
+}
+.fancybox-thumbs-list li {
+	display: inline-block;
+	zoom: 1;
+	vertical-align: top;
+	margin: 3px;
+	padding: 1px;
+}
+.fancybox-thumbs-list li.active {
+	border: 1px solid #999;
+	padding: 0;
+}
+.fancybox-thumbs-list li img {
+	display: block;
+	border: 0;
+	padding: 0;
+	opacity: .95;
+	filter: alpha(opacity=95);
+}
+
+.fancybox-thumbs-list li a {
+	display: block;
+	border: 1px solid #999;
+	background: #111;
+	opacity: .5;
+	filter: alpha(opacity=50);
+}
+
+.fancybox-thumbs-list li a:hover, .fancybox-thumbs-list li.active a {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.fancybox-nav span { visibility: visible; }
+</style>
+</head>
+<body>
+	<h1>fancyBox</h1>
+
+	
+
+	<h3>Thumbnail helper</h3>
+	<p>
+		<a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/666_ceaf0a50-36a1-11e4-8b82-01e080fd230b.jpg"><img src="images/4_s.jpg" alt="" /></a>
+
+		<a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/666_ceaf7f80-36a1-11e4-8b82-01e080fd230b.jpg"><img src="images/3_s.jpg" alt="" /></a>
+
+		<a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/666_ceaf3160-36a1-11e4-8b82-01e080fd230b.jpg"><img src="images/2_s.jpg" alt="" /></a>
+
+		<a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/666_main.jpg"><img src="images/1_s.jpg" alt="" /></a>
+	</p>
+
+    <h3>Thumbnail helper</h3>
+    <p>
+        <a class="fancybox-thumbs2" data-fancybox-group="thumb" href="images/prep/666_main.jpg"><img src="images/thumbs/666_main.jpg" alt="" /></a>
+
+        <a class="fancybox-thumbs2" data-fancybox-group="thumb" href="images/prep/666_ceaf0a50-36a1-11e4-8b82-01e080fd230b.jpg"><img src="images/thumbs/666_ceaf0a50-36a1-11e4-8b82-01e080fd230b.jpg" alt="" /></a>
+
+        <a class="fancybox-thumbs2" data-fancybox-group="thumb" href="images/prep/666_ceaf7f80-36a1-11e4-8b82-01e080fd230b.jpg"><img src="images/thumbs/666_ceaf7f80-36a1-11e4-8b82-01e080fd230b.jpg" alt="" /></a>
+
+        <a class="fancybox-thumbs2" data-fancybox-group="thumb" href="images/prep/666_ceaf3160-36a1-11e4-8b82-01e080fd230b.jpg"><img src="images/thumbs/666_ceaf3160-36a1-11e4-8b82-01e080fd230b.jpg" alt="" /></a>
+    </p>
+
+<div style="display:none;">
+	<div id="remark-pnb-container" class="remark-pnb-container">
+		<div class="head-3">Product name</div>
+		<div class="code">ID</div>
+		<div id="pnb-container">Price and buy contents <input class="buy" type="button" value="BUY"/></div>
+	</div>
+</div>
+</body>
+</html>
